@@ -1,0 +1,54 @@
+.map {
+  &__popup {
+    width: 25rem;
+    background-color: $color-primary;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-primary;
+  }
+  &__header {
+    background-color: $color-tertiary;
+    text-align: center;
+    padding: 1rem;
+    transform: skew(2deg, -2deg);
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.25, 1.25);
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: none;
+  }
+
+  &__back {
+    background-color: $color-tertiary;
+    text-align: center;
+    width: 5rem;
+    font-size: 5rem;
+    height: 5rem;
+    transform: skew(5deg, -5deg);
+    transition: .2s;
+    z-index: 1000;
+    position: absolute;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.25)
+    }
+  }
+
+  &__address {
+    font-size: 1.15rem;
+    background-color: $color-secondary;
+    padding: 1rem;
+    transform: skew(-2deg, 2deg)
+  }
+}

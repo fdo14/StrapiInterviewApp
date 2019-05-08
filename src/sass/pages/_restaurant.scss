@@ -1,0 +1,157 @@
+.restaurant{
+  border-radius: 5px;
+  margin: 2rem 0;
+  flex-basis: auto;
+  max-width: 800px;
+  background-color: $color-secondary;
+  
+  &__wrapper{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary;
+    
+  }
+
+  //Mobile styling
+  @include respond(phone) {
+    width: 50rem; 
+  }
+
+  &__title {
+    font-size: 4rem;
+    background-color: $color-tertiary;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 95%;
+    transform: skew(7deg, -7deg);
+    text-transform: uppercase;
+    transition: all .3s;
+    padding-top: 1rem;
+    @include respond(phone) {
+      margin-top: 2.5rem;
+     }
+
+    &:hover {
+      transform: scale(1.25, 1.25);
+      cursor: pointer;
+    }
+  }
+
+  //back button
+  &__back {
+    position: absolute;
+    font-size: 5rem;
+    margin-left: 1rem;
+    transition: all .3s;
+    &:hover {
+      transform: scale(1.25, 1.25);
+      cursor: pointer;
+    }
+  
+  }
+
+  &__description {
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top:2.5rem;
+    width: 85%;
+    background-color: $color-primary;
+    transform: skewY(1.5deg);
+  }
+
+  &__gallery {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    img {
+      z-index: 100;
+      height: 200px;
+    }
+  }
+
+  &__hours {
+    margin: 0 auto;
+    background-color: $color-primary;
+    justify-content: space-around;
+    display: flex;
+    width: 85%;
+    transform: skewY(-.5deg);
+    margin-top: 2rem;
+    padding: 1rem 0;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  &__district {
+    margin: 2rem;
+  }
+
+  &__arrow {
+    background-color: $color-tertiary;
+    z-index: 1000;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .35s;
+    &--left{
+      transform: skew(7deg, -7deg);
+    }
+
+    &--right {
+      transform: skew(-7deg, 7deg);
+    }
+
+    &:hover {
+      transform: scale(1.25, 1.25);
+      cursor: pointer;
+    }
+  }
+
+  &__reviews {
+    &--title {
+      width: 50%;
+      margin: 0 auto;
+      background-color: $color-tertiary;
+      padding: 1rem;
+      transform: skew(-2deg, 2deg);
+    }
+
+    &--wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    &--content {
+      width: 85%;
+      margin: 0 auto;
+      font-size: 1.25rem;
+      background-color: $color-primary;
+      padding: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      transform: skew(1deg, -1deg);
+    }
+
+    &--author {
+      background-color: $color-secondary;
+      margin: 0 auto;
+      margin-top: 1rem;
+      max-width: 200px;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+
+}
+
+.fa-star-specific {
+  color: $color-secondary !important;
+}

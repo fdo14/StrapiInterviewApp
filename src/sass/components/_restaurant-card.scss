@@ -1,0 +1,117 @@
+.card{
+  width: 25rem;
+  margin: 2rem;
+  height: 20rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+
+    &__side{
+      font-size: 2rem;
+      transition: all .8s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      height: 20rem;
+      
+      &--front {
+          background-color: $color-tertiary;
+      }
+
+      &--back {
+          background-color: $color-secondary;
+          transform: rotateY(180deg);
+      } 
+  }
+  
+  &:hover &__side--front {
+      transform: rotateY(-180deg);
+  }
+
+ &:hover &__side--back {
+      transform: rotateY(0);
+  }
+
+  &--title{
+    width: 95%;
+    background-color: $color-secondary;
+    transform: skew(10deg, -10deg);
+    margin-left: -.5rem;
+  }
+
+  &--picture {
+    width: 80%;
+    height: 80%;
+    object-fit: none;
+  
+  }
+
+  &__category{
+    width: 80%;
+    background-color: $color-secondary;
+    transform: skew(10deg, -10deg);
+    margin-left: 5.5rem;
+    margin-top: -2rem;
+    font-size: 1.5rem;
+  }
+
+  &__stars {
+    margin-top: 2rem;
+    width: 90%;
+    margin-left: 1rem;
+  }
+
+  &__button {
+    margin-top: 3rem;
+  }
+
+  &__bottom{
+    display: flex;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    margin-top: 3rem;
+
+    p {
+      font-size: 1.75rem;
+    }
+  }
+
+
+  //Mobile styling so you don't have to hover to learn more
+  @include respond(tab-port) {
+    height: auto;
+    border-radius: 15px;
+    background-color: $color-tertiary;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    &--picture {
+      height: 15rem;
+      object-fit: none;
+    
+    }
+
+    &__side{
+        height: auto;
+        position: relative;
+        box-shadow: none;
+
+        &--back {
+            transform: rotateY(0);
+            padding-top: 1rem;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+
+    &:hover &__side--front {
+            transform: rotateY(0);
+        }
+
+        &:hover &__side--back {
+            transform: rotateY(0);
+        }
+    }
+}
